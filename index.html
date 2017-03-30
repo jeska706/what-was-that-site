@@ -10,5 +10,8 @@
         <div ng-repeat="link in links | orderBy: '-stars'">
             {{link.address}} - Stars: {{link.stars}}
         </div>
+        <div>
+            <button ng-click="addLink()">Add a link</button>
+        </div>
     </body>
 </html>
