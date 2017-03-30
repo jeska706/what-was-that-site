@@ -12,6 +12,7 @@ app.controller('MainCtrl', ['$scope', function($scope){
     ];
 
     $scope.addLink = function(){
+        if(!$scope.siteName || $scope.siteName === '') { return; }
         $scope.links.push({address: $scope.siteName, stars: 0});
         $scope.siteName = '';
     };
