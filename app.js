@@ -16,4 +16,8 @@ app.controller('MainCtrl', ['$scope', function($scope){
         $scope.links.push({address: $scope.siteName, stars: 0});
         $scope.siteName = '';
     };
+
+    $scope.incrementStars - function(link){
+        link.stars += 1;
+    };
 }]);
