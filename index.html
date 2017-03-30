@@ -8,7 +8,7 @@
     </head>
     <body ng-app="interestingSites" ng-controller="MainCtrl">
         <div ng-repeat="link in links | orderBy: '-stars'">
-            {{link.title}} - Stars: {{link.stars}}
+            {{link.address}} - Stars: {{link.stars}}
         </div>
     </body>
 </html>
