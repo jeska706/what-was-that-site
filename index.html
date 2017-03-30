@@ -11,7 +11,10 @@
             {{link.address}} - Stars: {{link.stars}}
         </div>
         <div>
-            <button ng-click="addLink()">Add a link</button>
+            <form ng-click="addLink()">
+                <input type="text" ng-model="siteName"/>
+                <button type="submit">Add a link</button>
+            </form>
         </div>
     </body>
 </html>
