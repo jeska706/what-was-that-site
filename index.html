@@ -13,7 +13,10 @@
         </div>
         <div>
             <form ng-click="addLink()">
-                <input type="text" ng-model="siteName"/>
+                <input type="text" placeholder= "Site Name" ng-model="siteName"/><br>
+                <input type="text" placeholder= "Link to Site" ng-model="link"/><br>
+                <label for="comments">Comments about site:</label><br>
+                <textarea id="comments" ng-model="comment"></textarea><br>
                 <button type="submit">Add a link</button>
             </form>
         </div>
