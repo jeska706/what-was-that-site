@@ -3,28 +3,29 @@ var app = angular.module('interestingSites', []);
 app.controller('MainCtrl', ['$scope', function($scope){
     $scope.test = 'controller is connected';
 
-    $scope.links = [
-        {address: "link 1", stars: 5},
-        {address: "link 2", stars: 10},
-        {address: "link 3", stars: 2},
-        {address: "link 4", stars: 2},
-        {address: "link 5", stars: 8},
+    $scope.newSites = [
+        {siteName: "link 1", stars: 5},
+        {siteName: "link 2", stars: 10},
+        {siteName: "link 3", stars: 2},
+        {siteName: "link 4", stars: 2},
+        {siteName: "link 5", stars: 8},
     ];
 
-    $scope.addLink = function(){
+    $scope.addSite = function(){
         if(!$scope.siteName || $scope.siteName === '') { return; }
-        $scope.links.push({
-            address: $scope.siteName,
-            link: $scope.link,
+        $scope.newSites.push({
+            siteName: $scope.siteName,
+            address: $scope.address,
             comment: $scope.comment,
             stars: 0
         });
+        console.log('addlink route hit');
         $scope.siteName = '';
-        $scope.link = '';
+        $scope.address = '';
         $scope.comment = '';
     };
 
-    $scope.incrementStars - function(link){
-        link.stars += 1;
+    $scope.incrementStars = function(newSite){
+        newSite.stars += 1;
     };
 }]);

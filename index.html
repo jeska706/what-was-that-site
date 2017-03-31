@@ -7,14 +7,24 @@
         <script src="app.js" type="text/javascript"></script>
     </head>
     <body ng-app="interestingSites" ng-controller="MainCtrl">
-        <div ng-repeat="link in links | orderBy: '-stars'">
-            <span ng-click="incrementStars(link)">^</span>
-            {{link.address}} - Stars: {{link.stars}}
+        <div ng-repeat="newSite in newSites | orderBy: '-stars'">
+            <a ng-click="incrementStars(newSite)">^</a>
+            <a ng-show="newSite.address" href="{{newSite.address}}">
+                {{newSite.siteName}}<br>
+                {{newSite.address}}<br>
+                {{newSite.comment}}
+            </a>
+            <span ng-hide="newSite.address">
+                {{newSite.siteName}}
+                {{newSite.address}}
+                {{newSite.comment}}
+            </span>
+            - Stars: {{newSite.stars}}
         </div>
         <div>
-            <form ng-click="addLink()">
+            <form ng-click="addSite()">
                 <input type="text" placeholder= "Site Name" ng-model="siteName"/><br>
-                <input type="text" placeholder= "Link to Site" ng-model="link"/><br>
+                <input type="text" placeholder= "Link to Site" ng-model="address"/><br>
                 <label for="comments">Comments about site:</label><br>
                 <textarea id="comments" ng-model="comment"></textarea><br>
                 <button type="submit">Add a link</button>
