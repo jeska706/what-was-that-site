@@ -1,4 +1,6 @@
-var app = angular.module('interestingSites', []);
+var app = angular.module('interestingSites', ['ui.router']);
+
+
 
 app.factory('newSites', [function(){
     var o = {
@@ -6,8 +8,6 @@ app.factory('newSites', [function(){
     };
     return o;
 }]);
-
-
 
 app.controller('MainCtrl', ['$scope', 'newSites', function($scope, newSites){
     $scope.test = 'controller is connected';
