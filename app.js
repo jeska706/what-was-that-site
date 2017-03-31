@@ -28,4 +28,7 @@ app.controller('MainCtrl', ['$scope', function($scope){
     $scope.incrementStars = function(newSite){
         newSite.stars += 1;
     };
+    $scope.decreaseStars = function(newSite){
+        newSite.stars -= 1;
+    };
 }]);
