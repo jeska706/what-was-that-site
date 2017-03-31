@@ -1,15 +1,18 @@
 var app = angular.module('interestingSites', []);
 
-app.controller('MainCtrl', ['$scope', function($scope){
+app.factory('newSites', [function(){
+    var o = {
+        newSites: []
+    };
+    return o;
+}]);
+
+
+
+app.controller('MainCtrl', ['$scope', 'newSites', function($scope, newSites){
     $scope.test = 'controller is connected';
 
-    $scope.newSites = [
-        {siteName: "link 1", stars: 5},
-        {siteName: "link 2", stars: 10},
-        {siteName: "link 3", stars: 2},
-        {siteName: "link 4", stars: 2},
-        {siteName: "link 5", stars: 8},
-    ];
+    $scope.newSites = newSites.newSites;
 
     $scope.addSite = function(){
         if(!$scope.siteName || $scope.siteName === '') { return; }
